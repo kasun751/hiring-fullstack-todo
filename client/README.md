@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# 📝 Full Stack TODO Application (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive TODO application built using **React + TypeScript**, featuring clean architecture, form validation, and optimized server-state management.
 
-Currently, two official plugins are available:
+This frontend communicates with a Node.js + Express backend and demonstrates real-world full-stack development practices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18+
+- TypeScript
+- React Query (@tanstack/react-query)
+- React Hook Form
+- Zod (schema validation)
+- Axios
+- Tailwind CSS
+- React Hot Toast
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🧩 Core Features
+- Create TODO items
+- View all TODOs
+- Edit TODO items
+- Delete TODO items
+- Mark TODO as completed / pending
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### ⚡ UI/UX Features
+- Modal-based create/edit form
+- Loading indicators for async actions
+- Error handling with user-friendly messages
+- Toast notifications for success/failure feedback
+- Smooth transitions and hover effects
+- Responsive design (mobile + desktop)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🛡️ Validation
+- Frontend form validation using Zod
+- Real-time error feedback
+- Prevents invalid submissions
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🏗️ Project Architecture
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The project follows a modular and scalable structure:
+
+```txt
+src/
+│
+├── api/            # Axios API layer
+├── assets/         # Project Assests
+├── components/     # Reusable UI components
+│       ├──common/  # Common UI Component
+│       ├──modals/  # Modal UI Components
+│       ├──ui/      # Other UI Components
+├── hooks/          # React Query custom hooks
+├── pages/          # Page-level components (if routing used)
+├── validation/     # Zod schemas
+├── types/          # TypeScript interfaces/types
+├── App.tsx
+└── main.tsx
