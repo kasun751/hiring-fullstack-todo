@@ -16,9 +16,9 @@ import ConfirmationModal from "./ConfirmationModal.tsx";
 
 
 export default function TodoContainer({
-                                          todos,
-                                          isLoading = false
-                                      }: TodoContainerProps) {
+  todos,
+  isLoading = false
+}: TodoContainerProps) {
     const [filter, setFilter] = useState<FilterType>("all");
     const [sort, setSort] = useState<SortType>("newest");
     const deleteTodo = useDeleteTodo();

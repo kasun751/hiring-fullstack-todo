@@ -6,7 +6,7 @@ const api = import.meta.env.VITE_API_URL
 
 export const fetchTodos = async (): Promise<Todo[]> => {
     const res = await axios.get(api);
-    return res.data;
+    return res.data.data;
 };
 
 

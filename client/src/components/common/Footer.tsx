@@ -1,21 +1,11 @@
 import type {FooterProps} from "../../types/todo.ts";
+import { QUOTES } from "../../constant/todoConstants"
 
 export default function ToDoFooter({ totalTasks = 0, completedTasks = 0 }: FooterProps) {
     const currentYear = new Date().getFullYear();
     const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
-    const quotes = [
-        "Stay organized, stay productive! 🚀",
-        "Every task completed is a step forward ✨",
-        "Productivity is never an accident 📝",
-        "Small progress is still progress 🌟",
-        "Your future self will thank you 🙏",
-        "Make every day count ⚡",
-        "Consistency over intensity 💪",
-        "Done is better than perfect ✅"
-    ];
-
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    const randomQuote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
 
     return (
         <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-900 border-t border-white/10 mt-auto text-white shadow-inner">

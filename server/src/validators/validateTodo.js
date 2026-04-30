@@ -1,3 +1,24 @@
+/**
+ * Validation middleware for Todo creation and update requests.
+ *
+ * Uses express-validator to validate incoming request body:
+ *
+ * - title:
+ *   - Required
+ *   - Must be trimmed
+ *   - Min length: 3 characters
+ *   - Max length: 100 characters
+ *
+ * - description:
+ *   - Optional field
+ *   - Trimmed if provided
+ *   - Max length: 500 characters
+ *
+ * After validation rules run:
+ * - Collects all validation errors
+ * - Returns 400 response if validation fails
+ * - Passes control to next middleware if valid
+ */
 import { body, validationResult } from "express-validator";
 
 export const validateTodo = [

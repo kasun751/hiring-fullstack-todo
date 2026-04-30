@@ -1,12 +1,12 @@
 import type { TodoCardProps } from "../../types/todo.ts";
 
 export default function TodoCard({
-                                     todo,
-                                     onToggle,
-                                     onEdit,
-                                     onDelete,
-                                     showDescription = true
-                                 }: TodoCardProps) {
+     todo,
+     onToggle,
+     onEdit,
+     onDelete,
+     showDescription = true
+ }: TodoCardProps) {
     const formatDate = (date: Date | string) => {
         const d = new Date(date);
         return d.toLocaleDateString([], {

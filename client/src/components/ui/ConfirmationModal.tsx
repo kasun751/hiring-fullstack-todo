@@ -2,17 +2,18 @@ import { useEffect } from "react";
 import type {ConfirmationModalProps} from "../../types/todo.ts";
 
 export default function ConfirmationModal({
-                                              isOpen,
-                                              onClose,
-                                              onConfirm,
-                                              type = "delete",
-                                              title,
-                                              message,
-                                              confirmText,
-                                              cancelText = "Cancel",
-                                              isLoading = false,
-                                              itemName
-                                          }: ConfirmationModalProps) {
+    isOpen,
+    onClose,
+    onConfirm,
+    type = "delete",
+    title,
+    message,
+    confirmText,
+    cancelText = "Cancel",
+    isLoading = false,
+    itemName
+}: ConfirmationModalProps) {
+
     // Handle escape key press
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
@@ -144,8 +145,6 @@ export default function ConfirmationModal({
             onClick={onClose}
         >
             <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-                {/* Background overlay */}
-                {/*<div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />*/}
 
                 {/* Center modal */}
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>

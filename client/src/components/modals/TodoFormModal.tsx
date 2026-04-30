@@ -6,13 +6,13 @@ import {todoSchema, type TodoFormData} from "../../validation/todoSchema.ts";
 import ConfirmationModal from "../ui/ConfirmationModal.tsx";
 
 export default function TodoFormModal({
-                                          isOpen,
-                                          onClose,
-                                          onSubmit,
-                                          initialData,
-                                          isLoading = false,
-                                          mode = "create"
-                                      }: TodoFormModalProps) {
+  isOpen,
+  onClose,
+  onSubmit,
+  initialData,
+  isLoading = false,
+  mode = "create"
+}: TodoFormModalProps) {
     const {
         register,
         handleSubmit,
@@ -27,6 +27,9 @@ export default function TodoFormModal({
             description: ""
         }
     });
+    const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+    const modalTitle = mode === "create" ? "Add New Todo" : "Edit Todo";
+    const submitLabel = mode === "create" ? "Add Todo" : "Save Changes";
 
     // Reset form when modal opens/closes or mode changes
     useEffect(() => {
@@ -48,8 +51,6 @@ export default function TodoFormModal({
             });
         }
     }, [isOpen, mode, initialData, reset, setValue]);
-
-    const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
     if (!isOpen) return null;
 
@@ -82,9 +83,6 @@ export default function TodoFormModal({
         });
         onClose();
     };
-
-    const modalTitle = mode === "create" ? "Add New Todo" : "Edit Todo";
-    const submitLabel = mode === "create" ? "Add Todo" : "Save Changes";
 
     return (
         <div
