@@ -6,6 +6,7 @@ import {useState} from "react";
 import ToDoFooter from "../components/common/Footer.tsx";
 import TodoFormModal from "../components/modals/TodoFormModal.tsx";
 import {initialToDoObj} from "../constant/todoConstants.ts";
+import ModernLoader from "../components/common/ModernLoader.tsx";
 
 const HomePage = () => {
     const { data: todos, isLoading } = useTodos();
@@ -39,6 +40,12 @@ const HomePage = () => {
                 initialData={initialToDoObj}
                 isLoading={createTodo.isPending}
             />
+            {
+                isLoading &&
+                <ModernLoader
+                    text={`Loading...`}
+                />
+            }
             <ToDoFooter />
         </div>
     );

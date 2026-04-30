@@ -58,3 +58,12 @@ export type ConfirmationModalProps = {
     isLoading?: boolean;
     itemName?: string;
 };
+
+export type LoaderProps = {
+    variant?: "spinner" | "pulse" | "wave" | "gradient" | "ripple" | "pulsing-circle" | "bouncing-dots";
+    size?: "sm" | "md" | "lg" | "xl";
+    fullPage?: boolean;
+    text?: string;
+    color?: "blue" | "purple" | "pink" | "green" | "orange";
+    overlay?: boolean;
+};

@@ -13,6 +13,7 @@ import {
 import TodoFormModal from "../modals/TodoFormModal.tsx";
 import {initialToDoObj} from "../../constant/todoConstants.ts";
 import ConfirmationModal from "./ConfirmationModal.tsx";
+import ModernLoader from "../common/ModernLoader.tsx";
 
 
 export default function TodoContainer({
@@ -255,6 +256,9 @@ export default function TodoContainer({
                 onConfirm={handleDelete}
                 type="delete"
             />
+            {
+                (deleteTodo.isPending || updateTodo.isPending || isLoading )&& <ModernLoader/>
+            }
         </div>
     );
 }
