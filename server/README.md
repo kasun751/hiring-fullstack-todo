@@ -48,3 +48,38 @@ src/
 ├── routes/         # API routes
 ├── validators/     # Request validation rules
 └── server.js
+
+```
+
+## ⚙️ Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+### 1. Run Project
+
+```bash
+npm run dev
+```
+- Copy `.example.env` to `.env` and configure the required environment variables.
+
+
+## ⚠️ Assumptions
+- Backend is running locally on port 5000
+- MongoDB is properly connected in backend
+- No authentication system implemented
+- Single-user TODO application
+
+## 📌 Limitations
+- No authentication or multi-user support
+- No pagination or filtering
+- No offline support
+- Basic caching via React Query only
+
+## 🚀 Future Improvements
+- JWT authentication system
+- Drag & drop task ordering
+- Pagination / infinite scroll
+- Dark mode support
